@@ -2,7 +2,7 @@ from ultralytics import YOLO
 
 model = YOLO("models/yolov8m.pt")
 results = model.predict("test/brocolli.jpg")
-
+# HINDI ITO!
 print("Testing...")
 for res in results:
     for box in res.boxes:
