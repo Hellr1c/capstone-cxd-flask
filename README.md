@@ -6,7 +6,7 @@ Created by:
 * SANTOS, Hose Marco (@jmarkst)
 * ALVARO, Maki Andrei (@Hellr1c)
 * LACSON, David Isaac (@savestate1)
-* PASTRO, Josh Vincent (@jvincent2703) 
+* PASTRO, Josh Vincent (@jvincent2703)
 
 This web app is built using Flask, and uses the publicly available models provided by Ultralytics. While the COCO dataset has 80 classes, this project, for the purposes of the research, is restricted to identify only food items, specifically fruits and vegetables.
 
