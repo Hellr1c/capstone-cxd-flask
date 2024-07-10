@@ -1,5 +1,5 @@
 from ultralytics import YOLO
-from flask import request, Flask, jsonify
+from flask import request, Flask, jsonify, render_template
 from waitress import serve
 from PIL import Image
 import json
@@ -12,8 +12,7 @@ def root():
     Site main page handler function.
     :return: Content of index.html file
     """
-    with open("index.html") as file:
-        return file.read()
+    return render_template('index.html')
 
 
 @app.route("/detect", methods=["POST"])

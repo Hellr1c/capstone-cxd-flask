@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YOLOv8 Object Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./style/style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <!-- <input id="uploadInput" type="file"/>
+    <div id="info">
+        <p>Please wait...</p>
+        <p id="inf">Uploading... </p>
+    </div>
+    <canvas></canvas> -->
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="item header">
+                <h1>Overview</h1>
+            </div>
+            <div class="item expand">
+                <div class="card">
+                    <div>Lorem</div>
+                    <div>ipsum</div>
+                    <div><img src="{{ url_for('static', filename='./asset/dropdown.svg') }}" alt="See description" ></div>
+                </div>
+                <div class="card">
+                    <div>Lorem</div>
+                    <div>ipsum</div>
+                    <div><img src="./asset/stat_minus_1_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="See description" ></div>
+                </div>
+                <div class="card">
+                    <div>Lorem</div>
+                    <div>ipsum</div>
+                    <div><img src="./asset/stat_minus_1_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="See description" ></div>
+                </div>
+            </div>
+            <div class="item">
+                <input id="uploadInput" type="file"/>
+                <div id="info">
+                    <p>Please wait...</p>
+                    <p id="inf">Uploading... </p>
+                </div>
+            </div>
+        </div>
+        <div class="canvas">
+            <div class="display">
+                <canvas></canvas>
+            </div>
+        </div>
+    </div>
+<script src="{{ url_for('static', filename='./script/script.js') }}"></script>
+</body>
+</html>
