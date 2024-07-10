@@ -3,9 +3,9 @@
 This web application is for the fulfillment of the subject Capstone Project in Computer Science at the Adamson University Midyear Term, 2024.
 
 Created by:
-* SANTOS, Hose Marco (@jmarkst)
-* ALVARO, Maki Andrei
-* LACSON, David Isaac
+* SANTOS, Hose Marco ([github.com/jmarkst @jmarkst])
+* ALVARO, Maki Andrei ([github.com/Hellr1c @Hellr1c])
+* LACSON, David Isaac ([github.com/savestate1 @savestate1])
 * PASTRO, Josh Vincent
 
 This web app is built using Flask, and uses the publicly available models provided by Ultralytics. While the COCO dataset has 80 classes, this project, for the purposes of the research, is restricted to identify only food items, specifically fruits and vegetables.
