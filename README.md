@@ -4,7 +4,7 @@ This web application is for the fulfillment of the subject Capstone Project in C
 
 Created by:
 * SANTOS, Hose Marco (@jmarkst)
-* ALVARO, Maki Andrei (@Hellr1c)
+* ALVARO, Maki Andre (@Hellr1c)
 * LACSON, David Isaac (@savestate1)
 * PASTRO, Josh Vincent (@jvincent2703) 
 
