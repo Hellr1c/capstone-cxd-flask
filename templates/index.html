@@ -27,16 +27,21 @@
                 <div class="card">
                     <div>Lorem</div>
                     <div>ipsum</div>
-                    <div><img src="./asset/stat_minus_1_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="See description" ></div>
-                </div>
+                    <div><img src="{{ url_for('static', filename='./asset/dropdown.svg') }}" alt="See description" ></div>                </div>
                 <div class="card">
                     <div>Lorem</div>
                     <div>ipsum</div>
-                    <div><img src="./asset/stat_minus_1_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="See description" ></div>
-                </div>
+                    <div><img src="{{ url_for('static', filename='./asset/dropdown.svg') }}" alt="See description" ></div>                </div>
             </div>
             <div class="item">
-                <input id="uploadInput" type="file"/>
+                <div class="up-or-cam">
+                    <input id="uploadInput" type="file"/>
+                    <label for="uploadInput">Upload File</label>
+                </div>
+                <div class="up-or-cam">
+                    <input id="liveInput" type="file"/>
+                    <label for="liveInput">Use Camera</label>
+                </div>
                 <div id="info">
                     <p>Please wait...</p>
                     <p id="inf">Uploading... </p>
