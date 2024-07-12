@@ -40,3 +40,7 @@ Then go to your web browser, and type the URL `localhost:8080`. Depending on the
 Once loaded, upload an image. Processing time will depend on your machine.
 
 **To test, please use the following classes:** banana, apple, sandwich, orange, broccoli, carrot, hotdog, pizza, donut, cake.
+
+## How to use
+
+Upload an image by clicking the button `Upload file`, then wait for a few moments. Once the message disappear, and the image still won't load, please click (or double click) the canvas to force refresh. Click `Enable zoom (experimental)` to enable zoom and pan functionality. Use mouse to move and mouse wheel to zoom.
