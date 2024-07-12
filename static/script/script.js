@@ -55,36 +55,3 @@ input.addEventListener("change", (event) => {
  xhr.send(data);
 
 });
-
-
-
-/**
-* Function draws the image from provided file
-* and bounding boxes of detected objects on
-* top of the image
-* @param file Uploaded file object
-* @param boxes Array of bounding boxes in format
-  [[x1,y1,x2,y2,object_type,probability],...]
-*/
-function draw_image_an_boxes(file,boxes) {
-   const img = new Image()
-   img.src = URL.createObjectURL(file);
-   img.onload = () => {
-       const canvas = document.querySelector("canvas");
-       canvas.width = img.width;
-       canvas.height = img.height;
-       const ctx = canvas.getContext("2d");
-       ctx.drawImage(img,0,0);
-       ctx.strokeStyle = "#00FF00";
-       ctx.lineWidth = 3;
-       ctx.font = "18px serif";
-       boxes.forEach(([x1,y1,x2,y2,label]) => {
-           ctx.strokeRect(x1,y1,x2-x1,y2-y1);
-           ctx.fillStyle = "#00ff00";
-           const width = ctx.measureText(label).width;
-           ctx.fillRect(x1,y1,width+10,25);
-           ctx.fillStyle = "#000000";
-           ctx.fillText(label,x1,y1+18);
-       });
-   }
-}
