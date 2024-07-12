@@ -44,7 +44,8 @@ input.addEventListener("change", (event) => {
          if (xhr.status === 200) {
              info.style.display = "none";
              const boxes = JSON.parse(xhr.responseText);
-             draw_image_and_boxes(file, boxes);
+             update_canvas(file, boxes);
+             //draw_image_and_boxes(file, boxes);
          } else {
              inf.innerHTML = "Error: " + xhr.statusText;
          }
@@ -65,7 +66,7 @@ input.addEventListener("change", (event) => {
 * @param boxes Array of bounding boxes in format
   [[x1,y1,x2,y2,object_type,probability],...]
 */
-function draw_image_and_boxes(file,boxes) {
+function draw_image_an_boxes(file,boxes) {
    const img = new Image()
    img.src = URL.createObjectURL(file);
    img.onload = () => {

@@ -42,18 +42,20 @@
                     <input id="liveInput" type="file"/>
                     <label for="liveInput">Use Camera</label>
                 </div>
-                <div id="info">
-                    <p>Please wait...</p>
-                    <p id="inf">Uploading... </p>
-                </div>
             </div>
         </div>
         <div class="canvas">
+            <button onclick="enableZoom();" id="zoomtoggle">Enable zoom (experimental)</button>
+            <div id="info">
+                <p>Please wait...</p>
+                <p id="inf">Uploading... </p>
+            </div>
             <div class="display">
-                <canvas></canvas>
+                <canvas id="viewer"></canvas>
             </div>
         </div>
     </div>
-<script src="{{ url_for('static', filename='./script/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='./script/canvas.js') }}"></script>
+    <script src="{{ url_for('static', filename='./script/script.js') }}"></script>
 </body>
 </html>
