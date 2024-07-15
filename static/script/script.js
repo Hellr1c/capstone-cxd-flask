@@ -45,6 +45,7 @@ input.addEventListener("change", (event) => {
              info.style.display = "none";
              const boxes = JSON.parse(xhr.responseText);
              update_canvas(file, boxes);
+             update_sidebar(boxes);
              //draw_image_and_boxes(file, boxes);
          } else {
              inf.innerHTML = "Error: " + xhr.statusText;
@@ -55,3 +56,35 @@ input.addEventListener("change", (event) => {
  xhr.send(data);
 
 });
+
+function update_sidebar (boxes) {
+    const cards = document.getElementById("cards");
+    cards.innerHTML = ""; // clears laman.
+
+    let labels = {};
+    boxes.forEach(([ x1, y1, x2, y2, label ]) => {
+        if (label in labels) {
+            labels[ label ] += 1;
+        } else {
+            labels[ label ] = 1;
+        }
+    });
+
+    for (const [ key, value ] of Object.entries(labels)) {
+        const card = document.createElement("div");
+        card.classList.add("card");
+        
+        const title = document.createElement("div");
+        const num = document.createElement("div");
+        const btn = document.createElement("div");
+        const icon = document.createElement("img");
+        icon.src = dropdown;
+        btn.appendChild(icon);
+        title.innerHTML = key;
+        num.innerHTML = value;
+        card.appendChild(title);
+        card.appendChild(num);
+        card.appendChild(btn);
+        cards.appendChild(card);
+    }
+}
