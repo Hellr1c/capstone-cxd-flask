@@ -18,7 +18,7 @@
             <div class="item header">
                 <h1>Overview</h1>
             </div>
-            <div class="item expand">
+            <div class="item expand" id="cards">
                 <div class="card">
                     <div>Lorem</div>
                     <div>ipsum</div>
@@ -55,6 +55,9 @@
             </div>
         </div>
     </div>
+    <script>
+        const dropdown =  "{{ url_for('static', filename='./asset/dropdown.svg') }}";
+    </script>
     <script src="{{ url_for('static', filename='./script/canvas.js') }}"></script>
     <script src="{{ url_for('static', filename='./script/script.js') }}"></script>
 </body>
