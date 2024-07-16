@@ -1,4 +1,4 @@
-# CXD Capstone Project
+8# CXD Capstone Project
 
 This web application is for the fulfillment of the subject Capstone Project in Computer Science at the Adamson University Midyear Term, 2024.
 
@@ -16,9 +16,18 @@ This is an ongoing project.
 
 # Instructions
 
-To run this web app on your machine, please install Python first.
+To run this web app on your machine, please install Python version 3.9.11 first.
 
-After installing, install these libraries:
+run the python installer and choose custom install
+
+After installing, type this on the terminal to check if python is recognized
+
+```
+python
+```
+if not recognized restart your system, then type it again in the terminal to check.
+
+after installing, install these libraries:
 
 ```
 pip install ultralytics flask waitress pillow
