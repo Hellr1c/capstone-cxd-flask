@@ -7,6 +7,10 @@
     font-family: 'Kanit';
 }
 
+.show {
+    display: block;
+}
+
 canvas {
     display:block;
     width: 100%;
@@ -67,33 +71,25 @@ canvas {
 }
 
 .card {
-    font-size: 23px;
+    font-size: 90%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
     width: 100%;
-    height: 12%;
+    flex-direction: column;
     background-color: #343A39;
     border: solid 3px rgba(220, 220, 220, 0.541);
 }
 
-.card img{
-    border: solid 3px rgba(220, 220, 220, 0.541);
+.card button {
     padding: 5px;
     width: 37px;
     height: 37px;
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
 }
 
-.card img:hover{
-    cursor: pointer;
-}
-
-.card div{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: auto;
+.card button:hover {
+    background-color: #202C57;
 }
 
 .display {
@@ -128,4 +124,28 @@ label, button {
     border-radius: 3px;
     border: solid 1.5px rgba(220, 220, 220, 0.541);
     padding: 7px 20px;
+}
+
+.card-head {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+.card-head div {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-head div button {
+    align-self: flex-end;
+}
+
+.card-body {
+    padding: 5px;
+    display: none;
 }

@@ -20,18 +20,42 @@
             </div>
             <div class="item expand" id="cards">
                 <div class="card">
-                    <div>Lorem</div>
-                    <div>ipsum</div>
-                    <div><img src="{{ url_for('static', filename='./asset/dropdown.svg') }}" alt="See description" ></div>
+                    <div class="card-head">
+                        <div>Lorem</div>
+                        <div>ipsum</div>
+                        <div><button onclick="onCardOpen(0);"><img src="{{ url_for('static', filename='./asset/dropdown.svg') }}" alt="See description" ></button></div>
+                    </div>
+                    <div class="card-body">
+                        Test
+                    </div>
                 </div>
                 <div class="card">
-                    <div>Lorem</div>
-                    <div>ipsum</div>
-                    <div><img src="{{ url_for('static', filename='./asset/dropdown.svg') }}" alt="See description" ></div>                </div>
+                    <div class="card-head">
+                        <div>Lorem</div>
+                        <div>ipsum</div>
+                        <div><button onclick="onCardOpen(1);"><img src="{{ url_for('static', filename='./asset/dropdown.svg') }}" alt="See description" ></button></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="nutrients">
+                            <p>Fiber: 12</p>
+                            <p>Calcium: 12</p>
+                            <p>Carbohydrates: 12</p>
+                            <p></p>
+                            <p></p>
+                        </div>
+                        <button class="button">Google</button>
+                    </div>
+                </div>
                 <div class="card">
-                    <div>Lorem</div>
-                    <div>ipsum</div>
-                    <div><img src="{{ url_for('static', filename='./asset/dropdown.svg') }}" alt="See description" ></div>                </div>
+                    <div class="card-head">
+                        <div>Lorem</div>
+                        <div>ipsum</div>
+                        <div><button onclick="onCardOpen(2);"><img src="{{ url_for('static', filename='./asset/dropdown.svg') }}" alt="See description" ></button></div>
+                    </div>
+                    <div class="card-body">
+                        Test
+                    </div>
+                </div>
             </div>
             <div class="item">
                 <div class="up-or-cam">
