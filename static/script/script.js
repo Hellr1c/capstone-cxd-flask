@@ -73,18 +73,41 @@ function update_sidebar (boxes) {
     for (const [ key, value ] of Object.entries(labels)) {
         const card = document.createElement("div");
         card.classList.add("card");
-        
+
+        const head = document.createElement("div");
+        head.classList.add("card-head");
+
+        const body = document.createElement("div");
+        body.classList.add("card-body");
         const title = document.createElement("div");
         const num = document.createElement("div");
         const btn = document.createElement("div");
+        const button = document.createElement("button");
         const icon = document.createElement("img");
         icon.src = dropdown;
-        btn.appendChild(icon);
+        button.addEventListener("click", () => {
+            console.log(Object.keys(labels).indexOf(key));
+            onCardOpen(Object.keys(labels).indexOf(key));
+        });
+        button.appendChild(icon);
+        btn.appendChild(button);
         title.innerHTML = key;
         num.innerHTML = value;
-        card.appendChild(title);
-        card.appendChild(num);
-        card.appendChild(btn);
+        head.appendChild(title);
+        head.appendChild(num);
+        head.appendChild(btn);
+
+        /** body */
+        body.innerHTML = "Test";
+
+        card.appendChild(head);
+        card.appendChild(body);
         cards.appendChild(card);
     }
+}
+
+function onCardOpen(n) {
+    const body = document.getElementsByClassName("card-body")[n];
+    console.log(n);
+    body.style.display = body.style.display == "block" ? "none" : "block";
 }
