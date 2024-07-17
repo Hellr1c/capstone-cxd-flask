@@ -1,25 +1,11 @@
-/**
-* "Upload" button onClick handler: uploads selected 
-* image file to backend, receives an array of
-* detected objects and draws them on top of image
-
-const input = document.getElementById("uploadInput");
-input.addEventListener("change",async(event) => {
-    const file = event.target.files[0];
-    const data = new FormData();
-    data.append("image_file",file,"image_file");
-    const response = await fetch("/detect",{
-        method:"post",
-        body:data
-    });
-    const boxes = await response.json();
-    draw_image_and_boxes(file,boxes);
-})
-    */
-
 const input = document.getElementById("uploadInput");
 const info = document.getElementById("info");
 const inf = document.getElementById("inf");
+
+const coco = [{
+    'apple': 1309,
+    'orange': 2337
+}]
 
 info.style.display = "none";
 
@@ -98,7 +84,29 @@ function update_sidebar (boxes) {
         head.appendChild(btn);
 
         /** body */
-        body.innerHTML = "Test";
+        let nutrients = "";
+        const cocokey = coco[0][ key ] ? true : false;
+        console.log(coco[0][ key ])
+        console.log(coco[ 0][ 'apple' ]);
+        console.log(cocokey);
+        if (cocokey) {
+            const row = getNutritionRowInfo(coco[ 0 ][ key ]);
+            console.log(row)
+            const entries = Object.entries(row).filter(([ key ]) => key !== "" || key !== "name"); // Filter out empty key
+
+            for (const [ key, value ] of entries) {
+                if (key === "" || key === "name") {
+                    continue
+                }
+                console.log(`Key: ${ key }, Value: ${ value }`);
+                nutrients += "<p>" + key + ": " + value + "</p>";
+            }
+            
+        } else {
+            nutrients += "<p>No nutrient information found.</p>";
+        }
+
+        body.innerHTML = nutrients;
 
         card.appendChild(head);
         card.appendChild(body);
@@ -111,3 +119,53 @@ function onCardOpen(n) {
     console.log(n);
     body.style.display = body.style.display == "block" ? "none" : "block";
 }
+
+function getDatasetAsJson () {
+    fetch(csv)
+        .then((res) => res.text())
+        .then((text) => {
+            console.log(text);
+      // do something with "text"
+      const lines = text.split(/\r?\n/);
+
+    // Get headers from the first line
+            const headers = lines[ 0 ].split(',');
+            console.log(headers);
+
+    // Parse remaining lines into JSON objects
+    const jsonData = lines.slice(1).map(line => {
+        const values = line.split(/,(?=(?:[^"]*"[^"]*")*(?![^"]*"))/);
+      const obj = {};
+        headers.forEach((header, index) => {
+            obj[ header.trim() ] = values[ index ]?.trim() || "";
+        });
+      return obj;
+    });
+
+    return jsonData;
+  })
+  .then(data => {
+      nutrition = data;
+  })
+  .catch((e) => console.error(e));
+}
+
+function findFoodByTerm (term) {
+    const results = [];
+    for (const item of nutrition) {
+        const name = item.name?.toLowerCase();
+        if (name && name.includes(term.toLowerCase())) {
+            results.push(item);
+        }
+    }
+    return results;
+}
+
+function getNutritionRowInfo (id) {
+    return nutrition[ id ];
+}
+let nutrition = "";
+getDatasetAsJson();
+console.log("TESTING>>> " + nutrition);
+
+
