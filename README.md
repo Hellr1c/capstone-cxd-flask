@@ -22,11 +22,11 @@ run the python installer and choose custom install
 
 after pressing custom install, this screen will show just press next.
 
-<img src=""/>
+<img src="Pythoncheckbox.png"/>
 
 after pressing next, check the boxes need in order for the website to run.
 
-<img src=""/>
+<img src="Pythonnext.png"/>
 
 After installing, type this on the terminal to check if python is recognized
 
