@@ -1,4 +1,4 @@
-8# CXD Capstone Project
+8# CSXD Capstone Project
 
 This web application is for the fulfillment of the subject Capstone Project in Computer Science at the Adamson University Midyear Term, 2024.
 
@@ -19,6 +19,14 @@ This is an ongoing project.
 To run this web app on your machine, please install Python version 3.9.11 first.
 
 run the python installer and choose custom install
+
+after pressing custom install, this screen will show just press next.
+
+<img src="./test/Pythonnext.png"/>
+
+after pressing next, check the boxes need in order for the website to run.
+
+<img src="./test/Pythoncheckbox.png"/>
 
 After installing, type this on the terminal to check if python is recognized
 
