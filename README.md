@@ -1,4 +1,4 @@
-8# CXD Capstone Project
+8#CXD Capstone Project
 
 This web application is for the fulfillment of the subject Capstone Project in Computer Science at the Adamson University Midyear Term, 2024.
 
