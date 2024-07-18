@@ -1,4 +1,4 @@
-8# CSXD Capstone Project
+# CSXD Capstone Project
 
 This web application is for the fulfillment of the subject Capstone Project in Computer Science at the Adamson University Midyear Term, 2024.
 
@@ -16,7 +16,7 @@ This is an ongoing project.
 
 # Instructions
 
-To run this web app on your machine, please install Python version 3.9.11 first.
+To run this web app on your machine, please install Python version 3.11.9 first.
 
 run the python installer and choose custom install
 
@@ -25,6 +25,10 @@ after pressing custom install, this screen will show just press next.
 <img src="./test/Pythonnext.png"/>
 
 after pressing next, check the boxes need in order for the website to run.
+
+•install python to all users <br/>
+•add python to environmental variables<br/>
+•precompile standard library
 
 <img src="./test/Pythoncheckbox.png"/>
 
@@ -41,9 +45,9 @@ after installing, install these libraries:
 pip install ultralytics flask waitress pillow
 ```
 
-**Ultralytics** - provides functionalities for using YOLO models.
-**Flask** - this project's backend.
-**Waitress** - used to serve Flask apps.
+**Ultralytics** - provides functionalities for using YOLO models.<br/>
+**Flask** - this project's backend.<br/>
+**Waitress** - used to serve Flask apps.<br/>
 **Pillow** - imaging library.
 
 To run the project, navigate to the location of the project (using `cd`), then type this on your CLI:
