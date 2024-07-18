@@ -16,7 +16,7 @@ This is an ongoing project.
 
 # Instructions
 
-To run this web app on your machine, please install Python version 3.9.11 first.
+To run this web app on your machine, please install Python version 3.11.9 first.
 
 run the python installer and choose custom install
 
