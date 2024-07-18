@@ -26,8 +26,8 @@ after pressing custom install, this screen will show just press next.
 
 after pressing next, check the boxes need in order for the website to run.
 
-•install python to all users
-•add python to environmental variables
+•install python to all users <br/>
+•add python to environmental variables<br/>
 •precompile standard library
 
 <img src="./test/Pythoncheckbox.png"/>
@@ -45,9 +45,9 @@ after installing, install these libraries:
 pip install ultralytics flask waitress pillow
 ```
 
-**Ultralytics** - provides functionalities for using YOLO models.
-**Flask** - this project's backend.
-**Waitress** - used to serve Flask apps.
+**Ultralytics** - provides functionalities for using YOLO models.<br/>
+**Flask** - this project's backend.<br/>
+**Waitress** - used to serve Flask apps.<br/>
 **Pillow** - imaging library.
 
 To run the project, navigate to the location of the project (using `cd`), then type this on your CLI:
