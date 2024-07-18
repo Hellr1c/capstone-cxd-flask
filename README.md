@@ -1,4 +1,4 @@
-8# CSXD Capstone Project
+# CSXD Capstone Project
 
 This web application is for the fulfillment of the subject Capstone Project in Computer Science at the Adamson University Midyear Term, 2024.
 
@@ -25,6 +25,10 @@ after pressing custom install, this screen will show just press next.
 <img src="./test/Pythonnext.png"/>
 
 after pressing next, check the boxes need in order for the website to run.
+
+•install python to all users
+•add python to environmental variables
+•precompile standard library
 
 <img src="./test/Pythoncheckbox.png"/>
 
