@@ -2,11 +2,6 @@ const input = document.getElementById("uploadInput");
 const info = document.getElementById("info");
 const inf = document.getElementById("inf");
 
-const coco = [{
-    'apple': 1309,
-    'orange': 2337
-}]
-
 info.style.display = "none";
 
 input.addEventListener("change", (event) => {
@@ -32,6 +27,7 @@ input.addEventListener("change", (event) => {
              const boxes = JSON.parse(xhr.responseText);
              update_canvas(file, boxes);
              update_sidebar(boxes);
+             //enableZoom()
              //draw_image_and_boxes(file, boxes);
          } else {
              inf.innerHTML = "Error: " + xhr.statusText;
@@ -49,68 +45,71 @@ function update_sidebar (boxes) {
 
     let labels = {};
     boxes.forEach(([ x1, y1, x2, y2, label ]) => {
-        if (label in labels) {
-            labels[ label ] += 1;
-        } else {
-            labels[ label ] = 1;
+        if (label in coco[ 0 ]) {
+            console.log(label + " found in boxes")
+            if (label in labels) {
+                labels[ label ] += 1;
+            } else {
+                labels[ label ] = 1;
+            }
         }
     });
 
     for (const [ key, value ] of Object.entries(labels)) {
-        const card = document.createElement("div");
-        card.classList.add("card");
+        if (key in coco[ 0 ]) {
+            const card = document.createElement("div");
+            card.classList.add("card");
 
-        const head = document.createElement("div");
-        head.classList.add("card-head");
+            const head = document.createElement("div");
+            head.classList.add("card-head");
 
-        const body = document.createElement("div");
-        body.classList.add("card-body");
-        const title = document.createElement("div");
-        const num = document.createElement("div");
-        const btn = document.createElement("div");
-        const button = document.createElement("button");
-        const icon = document.createElement("img");
-        icon.src = dropdown;
-        button.addEventListener("click", () => {
-            console.log(Object.keys(labels).indexOf(key));
-            onCardOpen(Object.keys(labels).indexOf(key));
-        });
-        button.appendChild(icon);
-        btn.appendChild(button);
-        title.innerHTML = key;
-        num.innerHTML = value;
-        head.appendChild(title);
-        head.appendChild(num);
-        head.appendChild(btn);
+            const body = document.createElement("div");
+            body.classList.add("card-body");
+            const title = document.createElement("div");
+            const num = document.createElement("div");
+            const btn = document.createElement("div");
+            const button = document.createElement("button");
+            const icon = document.createElement("img");
+            icon.src = dropdown;
+            button.addEventListener("click", () => {
+                console.log(Object.keys(labels).indexOf(key));
+                onCardOpen(Object.keys(labels).indexOf(key));
+            });
+            button.appendChild(icon);
+            btn.appendChild(button);
+            title.innerHTML = key;
+            num.innerHTML = value;
+            head.appendChild(title);
+            head.appendChild(num);
+            head.appendChild(btn);
 
-        /** body */
-        let nutrients = "";
-        const cocokey = coco[0][ key ] ? true : false;
-        console.log(coco[0][ key ])
-        console.log(coco[ 0][ 'apple' ]);
-        console.log(cocokey);
-        if (cocokey) {
-            const row = getNutritionRowInfo(coco[ 0 ][ key ]);
-            console.log(row)
-            const entries = Object.entries(row).filter(([ key ]) => key !== "" || key !== "name"); // Filter out empty key
+            /** body */
+            let nutrients = "";
+        
+            if (key in coco[ 0 ]) {
+                console.log(key + " found in script js");
+                const row = getNutritionRowInfo(coco[ 0 ][ key ]);
+                console.log(row);
+                const entries = Object.entries(row).filter(([ key ]) => key !== "" || key !== "name"); // Filter out empty key
 
-            for (const [ key, value ] of entries) {
-                if (key === "" || key === "name") {
-                    continue
+                for (const [ key, value ] of entries) {
+                    if (key === "" || key === "name") {
+                        continue;
+                    }
+                    console.log(`Key: ${ key }, Value: ${ value }`);
+                    nutrients += "<p>" + key + ": " + value + "</p>";
                 }
-                console.log(`Key: ${ key }, Value: ${ value }`);
-                nutrients += "<p>" + key + ": " + value + "</p>";
-            }
             
-        } else {
-            nutrients += "<p>No nutrient information found.</p>";
+            } else {
+                nutrients += "<p>No nutrient information found.</p>";
+            }
+
+            body.innerHTML = nutrients;
+
+            card.appendChild(head);
+            card.appendChild(body);
+            cards.appendChild(card);
         }
-
-        body.innerHTML = nutrients;
-
-        card.appendChild(head);
-        card.appendChild(body);
-        cards.appendChild(card);
     }
 }
 

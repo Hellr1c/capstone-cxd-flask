@@ -19,43 +19,7 @@
                 <h1>Overview</h1>
             </div>
             <div class="item expand" id="cards">
-                <div class="card">
-                    <div class="card-head">
-                        <div>Lorem</div>
-                        <div>ipsum</div>
-                        <div><button onclick="onCardOpen(0);"><img src="{{ url_for('static', filename='./asset/dropdown.svg') }}" alt="See description" ></button></div>
-                    </div>
-                    <div class="card-body">
-                        Test
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-head">
-                        <div>Lorem</div>
-                        <div>ipsum</div>
-                        <div><button onclick="onCardOpen(1);"><img src="{{ url_for('static', filename='./asset/dropdown.svg') }}" alt="See description" ></button></div>
-                    </div>
-                    <div class="card-body">
-                        <div class="nutrients">
-                            <p>Fiber: 12</p>
-                            <p>Calcium: 12</p>
-                            <p>Carbohydrates: 12</p>
-                            <p></p>
-                            <p></p>
-                        </div>
-                        <button class="button">Google</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-head">
-                        <div>Lorem</div>
-                        <div>ipsum</div>
-                        <div><button onclick="onCardOpen(2);"><img src="{{ url_for('static', filename='./asset/dropdown.svg') }}" alt="See description" ></button></div>
-                    </div>
-                    <div class="card-body">
-                        Test
-                    </div>
-                </div>
+                <p>Please upload an image to continue.</p>
             </div>
             <div class="item">
                 <div class="up-or-cam">
@@ -69,10 +33,13 @@
             </div>
         </div>
         <div class="canvas">
-            <button onclick="enableZoom();" id="zoomtoggle">Enable zoom (experimental)</button>
-            <div id="info">
-                <p>Please wait...</p>
-                <p id="inf">Uploading... </p>
+            <div class="loading-modal" id="info">
+                <div class="modal-content">
+                    <div class="modal-background"></div>
+                    <div class="spinner"></div>
+                    <p>Please wait...</p>
+                    <p id="inf">Uploading... </p>
+                </div>
             </div>
             <div class="display">
                 <canvas id="viewer"></canvas>
