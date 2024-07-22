@@ -2,6 +2,9 @@
 const canvas = document.getElementById("viewer");
 const toggle = document.getElementById("zoomtoggle");
 const context = canvas.getContext('2d');
+
+let MODE = "upload"; // upload, takephoto, video
+
 let isZoom = false;
 
 // coco classes sa nutrition dataset

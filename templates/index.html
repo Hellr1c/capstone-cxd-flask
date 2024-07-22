@@ -21,8 +21,7 @@
                     <label for="uploadInput">Upload File</label>
                 </div>
                 <div class="up-or-cam">
-                    <input id="liveInput" type="file"/>
-                    <label for="liveInput">Use Camera</label>
+                    <button id="takephoto" onclick="takephoto();">Take a photo</button>
                 </div>
             </div>
         </div>
@@ -36,7 +35,9 @@
                 </div>
             </div>
             <div class="display">
-                <canvas id="viewer"></canvas>
+                <canvas id="viewer" style="display: block;"></canvas>
+                <video id="webcam"></video>
+                <button id="capture" onclick="capture()">Capture</button>
             </div>
         </div>
     </div>
@@ -46,5 +47,6 @@
     </script>
     <script src="{{ url_for('static', filename='./script/canvas.js') }}"></script>
     <script src="{{ url_for('static', filename='./script/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='./script/video.js') }}"></script>
 </body>
 </html>
