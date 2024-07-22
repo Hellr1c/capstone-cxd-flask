@@ -101,6 +101,10 @@ canvas {
     flex-direction: column;
     gap: 15px;
     flex-grow: 5;
+    height: 300px;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .header{
@@ -117,7 +121,7 @@ canvas {
 .card {
     font-size: 90%;
     display: flex;
-    width: 100%;
+    width: 90%;
     flex-direction: column;
     background-color: #343A39;
     border: solid 3px rgba(220, 220, 220, 0.541);
@@ -191,5 +195,7 @@ label, button {
 
 .card-body {
     padding: 5px;
+    overflow: auto;
+    max-height: 100%;
     display: none;
 }
