@@ -1,0 +1,4 @@
+Flask == 3.0.3
+ultralytics == 8.2.53
+waitress == 3.0.0
+pillow == 10.4.0
