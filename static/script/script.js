@@ -109,6 +109,10 @@ function update_sidebar (boxes) {
             card.appendChild(head);
             card.appendChild(body);
             cards.appendChild(card);
+        } else {
+            if (key == "person") {
+                console.log('person detected');
+            }
         }
     }
 }
