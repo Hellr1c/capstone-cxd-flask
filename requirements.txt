@@ -1,4 +1,6 @@
 Flask == 3.0.3
+torch == 2.3.1
+opencv-python == 4.10.0.84
 ultralytics == 8.2.53
 waitress == 3.0.0
 pillow == 10.4.0
